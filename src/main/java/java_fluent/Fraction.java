@@ -15,8 +15,8 @@ public final class Fraction implements Serializable {
                 return INDETERMINATE;
             throw new IllegalArgumentException("Fraction denominator cannot be equal to 0");
         }
-        if(denominator == 1){
-            switch(nominator){
+        if(nominator == 1){
+            switch(denominator){
                 case 1:
                     return FULL;
                 case 2:
