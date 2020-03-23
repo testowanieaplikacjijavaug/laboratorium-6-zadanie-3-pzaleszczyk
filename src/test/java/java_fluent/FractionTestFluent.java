@@ -45,12 +45,18 @@ public class FractionTestFluent {
 	}
 	
 	
+	Fraction testingexception(){
+		return Fraction.of(1,  0);
+	}
 	@Test
 	public void testexception() {
-		assertThatThrownBy(() -> {
-    	    Fraction.of(1, 0);
-    	}).isInstanceOf(IllegalArgumentException.class).hasMessageContaining("Fraction denominator cannot be equal to 0");
-
+		
+		try {
+			Fraction.of(1, 0);
+  		  failBecauseExceptionWasNotThrown(IndexOutOfBoundsException.class);
+  		} catch (Exception e) {
+  		  assertThat(e).isInstanceOf(IllegalArgumentException.class);
+  		}
 	}
 	
 	
