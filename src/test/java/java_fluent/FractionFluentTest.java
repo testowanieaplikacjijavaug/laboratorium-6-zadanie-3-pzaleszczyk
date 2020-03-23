@@ -3,7 +3,7 @@ package java_fluent;
 import org.junit.Test;
 import static org.assertj.core.api.Assertions.*;
 
-public class FractionTestFluent {
+public class FractionFluentTest {
 
 	@Test
 	public void testadd() {
