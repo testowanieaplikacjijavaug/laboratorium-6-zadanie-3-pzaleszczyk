@@ -37,7 +37,6 @@
   <build>
     <plugins>
 	    
-	    <sourceDirectory>src/main/java</sourceDirectory>
 	
 			<plugin>
 				<groupId>org.jacoco</groupId>
