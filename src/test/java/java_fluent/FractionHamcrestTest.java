@@ -1,6 +1,8 @@
 package java_fluent;
 
 import org.junit.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.MatcherAssert.assertThat; 
 import static org.hamcrest.Matchers.*;
 
@@ -17,6 +19,11 @@ public class FractionHamcrestTest {
 	@Test
 	public void testmultiplyindetermin() {
 		assertThat(Fraction.of(0,0).multiply(Fraction.of(1,2)),equalTo(Fraction.INDETERMINATE));
+	}
+	
+	@Test
+	public void testaddnoninteger() {
+		assertThat(Fraction.of(1,3).add(Fraction.of(1,2)),equalTo(Fraction.of(5,6)));
 	}
 	
 	@Test
@@ -76,7 +83,10 @@ public class FractionHamcrestTest {
 		assertThat(Fraction.of(1, 2).equals(Fraction.of(1, 2)),is(true));
 	}
 	
-	
+	@Test
+	public void testequalsnotinstaneoffraction() {
+		assertThat(Fraction.of(1, 2).equals(1),is(false));
+	}
 	
 	
 }

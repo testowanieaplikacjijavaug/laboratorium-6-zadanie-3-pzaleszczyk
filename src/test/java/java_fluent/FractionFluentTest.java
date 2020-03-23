@@ -6,7 +6,11 @@ import static org.assertj.core.api.Assertions.*;
 public class FractionFluentTest {
 
 	@Test
-	public void testadd() {
+	public void testaddnoninteger() {
+		assertThat(Fraction.of(1,3).add(Fraction.of(1,2))).isEqualTo(Fraction.of(5,6));
+	}
+	@Test
+	public void testaddinteger() {
 		assertThat(Fraction.of(1,2).add(Fraction.of(1,2))).isEqualTo(Fraction.FULL);
 	}
 	@Test
@@ -73,6 +77,11 @@ public class FractionFluentTest {
 	@Test
 	public void testequals() {
 		assertThat(Fraction.of(1, 2).equals(Fraction.of(1, 2))).isTrue();
+	}
+	
+	@Test
+	public void testequalsnotinstaneoffraction() {
+		assertThat(Fraction.of(1, 2).equals(1)).isFalse();
 	}
 	
 	
